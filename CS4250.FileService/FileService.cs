@@ -3,24 +3,25 @@ using System.Linq;
 
 namespace CS4250.FileService
 {
+    using System;
     using System.Collections.Generic;
 
     using CS4250.Domain;
 
     public class FileService : IFileService
     {
-        private const string DocumentsFileName = "documents.txt";
+        private const string DocumentsFileName = @"documents.txt";
 
         private IList<string> documents;
 
         public FileService()
         {
-            this.documents = this.GetDocuments();
+            this.documents = this.GetAllDocuments();
         }
 
-        private IList<string> GetDocuments()
+        public IList<string> GetDocuments()
         {
-            return File.ReadAllLines(DocumentsFileName).ToList();
+            return this.documents;
         }
 
         public Document Get(int id)
@@ -28,9 +29,14 @@ namespace CS4250.FileService
             throw new System.NotImplementedException();
         }
 
-        public IList<Document> GetByCategory(string category)
+        private IList<string> GetAllDocuments()
         {
-            throw new System.NotImplementedException();
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "Data", DocumentsFileName);
+
+            if (!File.Exists(path))
+                throw new Exception($"Document data file {path} does not exist!");
+
+            return File.ReadAllLines(path).ToList();
         }
     }
 }

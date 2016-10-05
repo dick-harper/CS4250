@@ -129,8 +129,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\active.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\new.png" />
     <Content Include="Content\themes\default-dark\32px.png" />
     <Content Include="Content\themes\default-dark\40px.png" />
     <Content Include="Content\themes\default-dark\style.css" />
@@ -141,7 +143,9 @@
     <Content Include="Content\themes\default\style.css" />
     <Content Include="Content\themes\default\style.min.css" />
     <Content Include="Content\themes\default\throbber.gif" />
-    <Content Include="Data\documents.txt" />
+    <Content Include="Data\documents.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -189,6 +193,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CS4250.FileService\CS4250.FileService.csproj">
+      <Project>{61D8D8F6-EE86-4DC7-80E4-E51D4679E71E}</Project>
+      <Name>CS4250.FileService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,5 +1,6 @@
 ﻿namespace CS4250.FileService
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
 
@@ -7,7 +8,8 @@
 
     public interface IFileService
     {
-        Document Get(int id);
-        IList<Document> GetByCategory(string category);
+        //Document Get(int id);
+
+        IList<string> GetDocuments();
     }
 }
