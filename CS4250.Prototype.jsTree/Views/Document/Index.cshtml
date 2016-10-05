@@ -5,17 +5,41 @@
 }
 
 <h2>TreeView Prototype</h2>
-<div id="treeview"></div>
+<div id="treeview">
+    <ul>
+        <li id="1">
+            Calculus I
+            <ul>
+                <li id="2"><a href="#">Functions Functions</a></li>
+                <li id="3"><a href="#"><img alt="active" src="~/Content/active.png" />  Inverse Functions</a></li>
+                <li id="4"><a href="#">Exponential Functions</a></li>
+                <li id="5"><a href="#"><img alt="active" src="~/Content/new.png" />  Logarithm Functions</a></li>
+
+            </ul>
+        </li>
+        <li id="6">
+            Calculus II
+            <ul>
+                <li id="7"><a href="#">Integration by Parts</a></li>
+                <li id="8"><a href="#">Trig Substitutions</a></li>
+                <li id="9"><a href="#">Exponential Functions</a></li>
+                <li id="10"><a href="#">Partial Fractions</a></li>
+
+            </ul>
+        </li>
+        <li id="11">
+            <img alt="active" src="~/Content/new.png" />  Calculus III
+        </li>
+    </ul>
+</div>
 
 <script>
-    $(document).ready(function(){
-        
-        alert('ready');
+    $(document).ready(function () {
 
-        
+        $('#treeview').jstree();
 
-    })
-    
+    });
+
 
 
 </script>
